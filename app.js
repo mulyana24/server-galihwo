@@ -8,6 +8,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 // import mongoose
 const mongoose = require("mongoose");
+const cors = require("cors");
 //connection mongoDB
 mongoose.connect(
   "mongodb://hicode:galihwo@cluster0-shard-00-00.7ltqq.mongodb.net:27017,cluster0-shard-00-01.7ltqq.mongodb.net:27017,cluster0-shard-00-02.7ltqq.mongodb.net:27017/db_galihwo?ssl=true&replicaSet=atlas-l4qyje-shard-0&authSource=admin&retryWrites=true&w=majority",
@@ -57,6 +58,7 @@ app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
 app.use("/api/v1/member", apiRouter);
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -72,5 +74,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// cors
+app.use(cors());
 
 module.exports = app;
