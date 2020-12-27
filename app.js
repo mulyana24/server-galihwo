@@ -42,6 +42,7 @@ app.use(
   })
 );
 app.use(flash());
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -76,6 +77,6 @@ app.use(function (err, req, res, next) {
 });
 
 // cors
-app.use(cors());
+
 
 module.exports = app;
