@@ -13,6 +13,8 @@
                         <th>Date</th>
                         <th>Title</th>
                         <th>Name Member</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
 
                         <th>Status</th>
                         <th>Action</th>
@@ -27,6 +29,8 @@
                             <%= booking[i].bookingEndDate.toLocaleString().split(',')[0] %> </td>
                         <td><%= booking[i].itemId.title %></td>
                         <td><%= booking[i].memberId.firstName %> <%= booking[i].memberId.lastName %></td>
+                        <td><%= booking[i].memberId.email %> </td>
+                        <td><%= booking[i].memberId.phoneNumber %> </td>
 
                         <td><%= booking[i].payments.status %></td>
 
