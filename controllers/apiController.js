@@ -83,7 +83,7 @@ module.exports = {
         imageUrl: "images/testimoni2.jpg",
         name: "Happy Wedding",
         rate: "4.5",
-        content: "Mantap mantap mantap",
+        content: "Unforget moments",
         familyName: "Rafly",
         familyOccupation: "Karyawan swasta",
       };
@@ -141,8 +141,8 @@ module.exports = {
 
     await item.save();
 
-    let total = item.price * duration;
-    let tax = total * 0.1;
+    let total = item.price;
+    // let tax = total * 0.1;
 
     const invoice = Math.floor(1000000 + Math.random() * 9000000);
 
@@ -157,7 +157,7 @@ module.exports = {
       invoice,
       bookingStartDate,
       bookingEndDate,
-      total: (total += tax),
+      total: (total),
       itemId: {
         _id: item.id,
         title: item.title,
