@@ -77,18 +77,19 @@ module.exports = {
         .populate({ path: "activityId", select: "_id name type imageUrl" });
 
       const bank = await Bank.find();
+      const booking = await Booking.find();
 
-      const testimonial = {
-        _id: "asasdasdad1assdgag",
-        imageUrl: "images/testimoni2.jpg",
-        name: "Happy Wedding",
-        rate: "4.5",
-        content: "Unforget moments",
-        familyName: "Rafly",
-        familyOccupation: "Karyawan swasta",
-      };
+      // const testimonial = {
+      //   _id: "asasdasdad1assdgag",
+      //   imageUrl: "images/testimoni2.jpg",
+      //   name: "Happy Wedding",
+      //   rate: "4.5",
+      //   content: "Unforget moments",
+      //   familyName: "Rafly",
+      //   familyOccupation: "Karyawan swasta",
+      // };
 
-      res.status(200).json({ ...item._doc, bank, testimonial });
+      res.status(200).json({ ...item._doc, bank, booking });
     } catch (error) {
       res.status(500).json({ message: "internal server error" });
     }

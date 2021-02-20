@@ -53,8 +53,10 @@ describe("API ENDPOINT TESTING", () => {
         expect(res.body).to.have.property("__v");
         expect(res.body).to.have.property("bank");
         expect(res.body.bank).to.have.an("array");
-        expect(res.body).to.have.property("testimonial");
-        expect(res.body.testimonial).to.have.an("object");
+        expect(res.body).to.have.property("booking");
+        expect(res.body.booking).to.have.an("array");
+        // expect(res.body).to.have.property("testimonial");
+        // expect(res.body.testimonial).to.have.an("object");
         done();
       });
   });
