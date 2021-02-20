@@ -77,7 +77,7 @@ module.exports = {
         .populate({ path: "activityId", select: "_id name type imageUrl" });
 
       const bank = await Bank.find();
-      const booking = await Booking.find();
+      const booking = await Booking.find().select(" _id bookingStartDate bookingEndDate");
 
       // const testimonial = {
       //   _id: "asasdasdad1assdgag",
